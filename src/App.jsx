@@ -1,33 +1,28 @@
-
+// the main page--the main component that brings it all together//
+// putting export default App function at the beginnning//
+// putting all the components on the screen in order: title,theme button, input, filter buttons, task-list, and clear button.//
+// uses the useTodoContext to get clearCompleted function for the clear button//
 
 import './App.css'
-import TodoInput from './components/TodoInput';
+import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList;
-import { TodoProvider } from './contexts/TodoContext';  
+import FilterButtons from "./components/FilterButtons";
+import ThemeToggleButton from "./components/ThemeToggle"
+import { useTodoContext } from "./contexts/TodoContext";  
 
 
-function AppContent(){
+export default function App(){
+  const {clearCompleted} = useTodoContext();
+
  return (
- <div>
+ <div className="app">
+  <h1>Todo App(Context API)</h1>
+  <ThemeToggleButton/>
   <TodoInput />
+  <FilterButtons />
   <TodoList />
- </div>
-
- );
-
-}
-function App() {
-  return (
-<>
-    <TodoProvider>
-      <h1>Todo App</h1>
-      <AppContent /> 
-    </TodoProvider>
-
-      </>
   
-  );
+  <button onClick={clearCompleted}>Clear Completed</button>
+ </div>
+ );
 }
-
-export default App
-

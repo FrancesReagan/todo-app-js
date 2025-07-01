@@ -1,3 +1,4 @@
+// the starting point--the file that starts the app and wraps it with the providers//
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
