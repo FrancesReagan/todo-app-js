@@ -1,4 +1,4 @@
-// putting export default at the beginning//
+// putting export default at the beginning //
 
 import { useState } from "react";
 import { useTodos } from "../contexts/TodoContext"
