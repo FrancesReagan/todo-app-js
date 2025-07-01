@@ -1,12 +1,11 @@
-// todo context manages task list and actions (add, toggle, etc.)//
+// todocontext is the main context for managing todo list and actions (add, toggle, etc.)//
 
 import { createContext, useState, useContext, useEffect }  from "react";
 
 const TodoContext = createContext(null);
-// export const useTodos = ()  => useContext (TodoContext)//
-
 
 export function TodoProvider({children}){  
+  // initialize todos from localStorage or empty array//
   const [todos, setTodos] = useState(() => {   
     try {     
       return JSON.parse(localStorage.getItem("todos") || "[]");   
@@ -17,7 +16,7 @@ export function TodoProvider({children}){
   }); 
   
   
-
+// effect to save todos to localStorage whenever todos change//
 useEffect(()=>{
   try {
     localStorage.setItem("todos",JSON.stringify(todos));
@@ -26,6 +25,7 @@ useEffect(()=>{
   }
 }, [todos]);
 
+// function to add a new todo//
   const addTodo = (text) => {
     if (text.trim()) {
       setTodos([
@@ -39,6 +39,7 @@ useEffect(()=>{
     }
   };
 
+  // function to toggle todo completion status//
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo)=>
@@ -47,10 +48,12 @@ useEffect(()=>{
   );
 };
 
+// function to delete a todo//
 const deleteTodo = (id) => {
   setTodos(todos.filter((todo)=>todo.id!==id));
 };
 
+// function to edit a todo//
 const editTodo = (id,newText) => {
   setTodos(
     todos.map((todo) => 
@@ -59,10 +62,13 @@ const editTodo = (id,newText) => {
   );
 };
 
+
+// function to remove all completed todos//
 const clearCompleted = () => {
   setTodos(todos.filter(todo=> !todo.completed));
 };
 
+// value object with all functions and state to share//
 const value = {todos,addTodo,toggleTodo,deleteTodo, editTodo, clearCompleted};
 
 return<TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
