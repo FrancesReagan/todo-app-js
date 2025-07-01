@@ -1,4 +1,5 @@
-// TodoInput.jsx is the component for add  new tools//
+// TodoInput.jsx is the component for add  new tools---it is the task adder---it shows an input box and a button
+// to add new tasks---it uses useTodoContext to get the addTodo function and call it when user submits a task.//
 // putting export default at the beginning //
 
 // import react hook for managing component state....and custom hook to access todo context//
@@ -38,3 +39,7 @@ export default function TodoInput() {
 </form>
   );
 }
+
+// more notes on TodoInput component: state--const[input, setInput] holds what user types in the input box and has a
+// tool --setInput--to update the box.  context---useTodoContext--grabs the addTodo function from the shared notebook.
+// form--when user submits the form(by clicking the button) --it calls addTodo and clears the input.//
