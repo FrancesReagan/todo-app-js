@@ -1,3 +1,6 @@
+// this component uses themecontext to get theme and toggletheme from the context; shows current state--the button text
+// shows what mode use will switch to; gives visual feedback by the button colors change based on current theme; and 
+// simple functionality as it only calls toggleTheme when clicked//
 import { useThemeContext } from "../contexts/ThemeContext";
 
 export default function ThemeToggleButton() {
