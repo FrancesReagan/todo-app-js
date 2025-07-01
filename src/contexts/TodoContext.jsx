@@ -4,16 +4,14 @@ import { createContext, useState, useContext, useEffect }  from "react";
 
 const TodoContext = createContext(null);
 
-export function TodoProvider({children}){  
-  // initialize todos from localStorage or empty array//
-  const [todos, setTodos] = useState(() => {   
-    try {     
-      return JSON.parse(localStorage.getItem("todos") || "[]");   
-    } catch (error) {     
-      console.error("Failed to parse todos:", error);     
-      return [];   
-    } 
-  }); 
+const [todos, setTodos] = useState(() => {   
+  try {     
+    return JSON.parse(localStorage.getItem("todos") || "[]");   
+  } catch (error) {     
+    console.error("Failed to parse todos:", error);     
+    return [];   
+  } 
+});
   
   
 // effect to save todos to localStorage whenever todos change//
