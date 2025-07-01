@@ -1,7 +1,8 @@
 // main--is the starting point that renders the app with providers//
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+// global styles//
+import './index.css' 
 import App from './App.jsx'
 import { AppProviders } from './AppProviders.jsx';  
 

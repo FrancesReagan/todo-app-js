@@ -3,7 +3,7 @@
 // putting all the components on the screen in order: title,theme button, input, filter buttons, task-list, and clear button.//
 // uses the useTodoContext to get clearCompleted function for the clear button//
 
-import './App.css'
+import "./App.css"
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import FilterButtons from "./components/FilterButtons";

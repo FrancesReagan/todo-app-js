@@ -1,4 +1,20 @@
-@import "tailwindcss";
+/* sets background and text colors based on light or dark theme */
+body.light{
+  background-color: #fff;
+  color:#333;
+}
+
+body.dark{
+  background-color:#333;
+  color:#fff;
+}
+
+/* centers app and adds padding */
+.app{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
