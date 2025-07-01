@@ -2,49 +2,99 @@
 
 import { createContext, useState, useContext, useEffect }  from "react";
 
-const TodoContext = createContext()
-export const useTodos = ()  => useContext (TodoContext)
+const TodoContext = createContext(null);
+// export const useTodos = ()  => useContext (TodoContext)//
 
 
 export function TodoProvider({children}){
-  const [todos, setTodos] = useState([])
+ const [todo, setTodo] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem("todos") || "[]");
+  } catch (error) {
+    console.error("Failed to parse todos:", error);
+    return [];
+  }
+});
 
-  // addtTodo
+useEffect(()=>{
+  try {
+    localStorage.setItem("todos",JSON.stringify(todos));
+  } catch (error) {
+  }
+  },[todos]);
+
   const addTodo = (text) => {
-    const newTodo = {
-      id: Date.now(), 
-      todotext, 
-      completed:false }
-      setTodos([...todos, newTodo])
-
-    };
-  
-    //
-      const toggleTodo = (id) => {
-      setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed}: todo)) 
+    if (text.trim()) {
+      setTodo([
+        ...todos,
+        id:crypto.randomUUID(),
+        text,
+        completed:false,
+      },
+      ]);
     }
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo)=>
+        todo.id === id?{...todo,completed: !todo.completed}:todo
+    )
+  );
+};
+
+const deleteTodo = (id) => {
+  setTodos(todos.filter((todo)=>todo.id!==id));
+};
+
+const editTodo = (id,newText) => {
+  setTodos(
+    todos.map((todo) => 
+      todo.id === id?{...todo,text:newText }:todo
+  )
+  );
+};
+
+
+
+//   const [todos, setTodos] = useState(() => {
+
+//   // addTodo//
+//   const addTodo = (text) => {
+//     const newTodo = {
+//       id: Date.now(), 
+//       todotext, 
+//       completed:false }
+//       setTodos([...todos, newTodo])
+
+//     };
+  
+//     //
+//       const toggleTodo = (id) => {
+//       setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed}: todo)) 
+//     }
       
 
-  // delete todo
-   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id))
-   }
+//   // delete todo
+//    const deleteTodo = (id) => {
+//     setTodos(todos.filter(todo => todo.id !== id))
+//    }
 
-  // filter todo
-
-
-  // edit todo
-   const editTodo = (id,newText) => {
-    setTodos(todos.map(todo => todo.id === id? {...todo, text:nextText}: todo))
-   }
+//   // filter todo
 
 
-  return (
-    <TodoContext.Provider value={{todos, addTodo, toggleTodo,deleteTodo, editTodo}}>
-     {children}
-    </TodoContext.Provider>
+//   // edit todo
+//    const editTodo = (id,newText) => {
+//     setTodos(todos.map(todo => todo.id === id? {...todo, text:nextText}: todo))
+//    }
+
+
+//   return (
+//     <TodoContext.Provider value={{todos, addTodo, toggleTodo,deleteTodo, editTodo}}>
+//      {children}
+//     </TodoContext.Provider>
     
 
-  );
+//   );
 
-}
+// }
