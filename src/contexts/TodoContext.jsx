@@ -6,27 +6,31 @@ const TodoContext = createContext(null);
 // export const useTodos = ()  => useContext (TodoContext)//
 
 
-export function TodoProvider({children}){
- const [todo, setTodo] = useState(() => {
-  try {
-    return JSON.parse(localStorage.getItem("todos") || "[]");
-  } catch (error) {
-    console.error("Failed to parse todos:", error);
-    return [];
-  }
-});
+export function TodoProvider({children}){  
+  const [todos, setTodos] = useState(() => {   
+    try {     
+      return JSON.parse(localStorage.getItem("todos") || "[]");   
+    } catch (error) {     
+      console.error("Failed to parse todos:", error);     
+      return [];   
+    } 
+  }); 
+  
+  
 
 useEffect(()=>{
   try {
     localStorage.setItem("todos",JSON.stringify(todos));
   } catch (error) {
+      console.error("Failed to save todos:", error);
   }
-  },[todos]);
+}, [todos]);
 
   const addTodo = (text) => {
     if (text.trim()) {
-      setTodo([
+      setTodos([
         ...todos,
+        {
         id:crypto.randomUUID(),
         text,
         completed:false,
@@ -71,45 +75,3 @@ export function useTodoContext(){
   return context;
 }
 
-// older version start//
-//   const [todos, setTodos] = useState(() => {
-
-//   // addTodo//
-//   const addTodo = (text) => {
-//     const newTodo = {
-//       id: Date.now(), 
-//       todotext, 
-//       completed:false }
-//       setTodos([...todos, newTodo])
-
-//     };
-  
-//     //
-//       const toggleTodo = (id) => {
-//       setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed}: todo)) 
-//     }
-      
-
-//   // delete todo
-//    const deleteTodo = (id) => {
-//     setTodos(todos.filter(todo => todo.id !== id))
-//    }
-
-//   // filter todo
-
-
-//   // edit todo
-//    const editTodo = (id,newText) => {
-//     setTodos(todos.map(todo => todo.id === id? {...todo, text:nextText}: todo))
-//    }
-
-
-//   return (
-//     <TodoContext.Provider value={{todos, addTodo, toggleTodo,deleteTodo, editTodo}}>
-//      {children}
-//     </TodoContext.Provider>
-    
-
-//   );
-
-// }
