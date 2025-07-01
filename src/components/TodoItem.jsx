@@ -42,7 +42,13 @@ export default function TodoItem({todo}) {
        <button onClick={handleEdit} style={{ marginLeft: "10px"}}>
         {isEditing ?"Save":"Edit"} 
         </button> 
+
+      <button onClick={() => deleteTodo(todo.id)} style={{ marginLeft:"10px"}}>
+        Delete
+        </button>
         </div>
+     );
+   }
 
      
         
