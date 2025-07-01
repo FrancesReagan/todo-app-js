@@ -61,13 +61,3 @@ export default function TodoItem({todo}) {
         </div>
      );
    }
-
-     
-        
-        
-     
-  
-   </div>
-  );
-}
-
