@@ -1,4 +1,7 @@
 // putting export default at beginning//
+// single task--shows one task with a checkbox, text, and buttons to edit and or delete.//
+// uses toggleTodo, deleteTodo, and editTodo to update tasks//
+// shows checkbox, task text, and buttons//
 import { useState } from "react";
 import { useTodoContext } from "../contexts/TodoContext";
 
@@ -9,7 +12,7 @@ export default function TodoItem({todo}) {
   const [isEditing, setIsEditing] = useState(false);
 
 
-
+// tracks whether user is editing the task (isEditing) and the new text (newText).//
   const handleEdit = () => {
     if (isEditing) {
       editTodo(todo.id,newText);
