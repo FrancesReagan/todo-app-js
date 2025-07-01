@@ -27,7 +27,22 @@ export default function TodoItem({todo}) {
       onChange={() => toggleTodo(todo.id)}
       />
 
-      
+      {isEditing ? (
+        <input
+        type="text"
+        value={newText}
+        onChange={(e) => setNewText(e.target.value)}
+        style={{ padding: "5px" }}
+        />
+      ): (
+        <span style={{ textDecoration: todo.completed?"line-through":"none" }}>
+        {todo.text}
+        </span>
+      )}
+       <button onClick={handleEdit} style={{ marginLeft: "10px"}}>
+        {isEditing ?"Save":"Edit"} 
+        </button> 
+        </div>
 
      
         
