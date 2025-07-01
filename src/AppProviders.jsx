@@ -1,3 +1,4 @@
+// appproviders combines all context providers//
 import { TodoProvider } from "./contexts/TodoContext";  
 import { FilterProvider } from "./contexts/FilterContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
