@@ -1,4 +1,6 @@
-// todolist is the component that displays the filtered list of todos//
+// todolist is the task display---the component that displays the filtered list of todos//
+// shows all of the user's tasks but only the ones that match the current filter//
+// uses both TodoContext (for tasks) and FilterContext (for the filter)//
 
 import { useTodoContext } from "../contexts/TodoContext";
 import { useFilterContext } from "../contexts/FilterContext";
@@ -35,3 +37,7 @@ export default function TodoList(){
       </div>
     );
   }
+
+  // more notes on TodoList component---contexts--grabs todos from TodoContext and filter form FilterContext--
+  // filtering--uses a switch to choose which tasks to show based on the filter---rendering--shows each task using
+  // TodoItem or a message if there are not tasks.//
