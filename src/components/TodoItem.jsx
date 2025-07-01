@@ -20,27 +20,21 @@ export default function TodoItem({todo}) {
   };
 
   return (
-   
-     <li>
-        <input type="checkbox"
-        checked={TodoItem.completed} onChange={() => toggleTodo (todo.id)}/>
-        <h2>{TodoItem.todoText}</h2>
-        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+   <div style={{ margin: "10px 0"}}>
+    <input
+      type="checkbox"
+      checked={todo.completed}
+      onChange={() => toggleTodo(todo.id)}
+      />
+
+      
+
+     
         
         
      
-  {isEditing ? (
-    <form onSubmit={handleEditSubmit}>
-      <input value={newText} onChange={(e) => setNewText(e.target.value)}/>
-      <button type="submit">Save</button>
-    </form>
-  ):(
-    <>
-    {todo.text}
-    <button onClick={() => SetisEditing(true)}>Edit</button>
-</>
-  )}
-   </li>
+  
+   </div>
   );
 }
-export default TodoItem;
+
