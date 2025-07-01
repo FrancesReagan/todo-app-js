@@ -13,8 +13,30 @@ export function ThemeProvider({children}) {
     }
   });
 
-  
+  useEffect(() => {
+    try {
+      localStorage.setItem("theme", theme);
+      document.body.className = "theme";
+    }catch (error) {
+      console.error ("Failed to save theme:", error);
+      document.body.className = theme;
+    }
+    },[theme]);
 
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : light);
+  };
 
+  const value = { theme, toggleTheme };
+  return<ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+
+}
+
+export function useThemeContext() {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useThemeContext must be used within a ThemeProvider");
+  }
+  return context;
 
 }
