@@ -1,17 +1,23 @@
-import { useTodos } from "../contexts/TodoContext";
+// putting export default at beginning//
 import { useState } from "react";
-
-function TodoItem({todo}) {
-  const [newText, setNewText] = useState(todo.text)
-  const [isEditing, SetisEditing] = useState(false)
+import { useTodoContext } from "../contexts/TodoContext";
 
 
-  const {toggleTodo, deleteTodo, editTodo} = useTodos()
+export default function TodoItem({todo}) {
+  const {toggleTodo, deleteTodo, editTodo} = useTodoContext();
+  const [newText, setNewText] = useState(todo.text);
+  const [isEditing, setIsEditing] = useState(false);
 
-  const handleEditSubmit = (e) => {
-    e.preventDefault()
-    editTodo(todo.id, newText)
-  }
+
+
+  const handleEdit = () => {
+    if (isEditing) {
+      editTodo(todo.id,newText);
+      setIsEditing(false);
+    } else {
+      setIsEditing(true);
+    }
+  };
 
   return (
    
