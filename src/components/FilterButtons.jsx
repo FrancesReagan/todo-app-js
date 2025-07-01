@@ -7,16 +7,35 @@ export default function FilterButtons(){
 
   return (
     <div style={{marginBottom: "20px"}}>
+      {/* all button -- shows all todos */}
       <button onClick={() => setFilter("all")}
-        style={{fontWeight: filter === "all"?"bold": "normal"}}
+        style={{fontWeight: filter === "all"?"bold": "normal",
+          marginRight: "10px",
+          padding: "8px 12px"
+        }}
         >
           All
         </button>
+
+        {/* active button--shows only incomplete todos */}
         <button onClick={() => setFilter("active")}
-        style={{fontWeight: filter === "completed"?"bold": "normal"}}
+        style={{fontWeight: filter === "active"?"bold": "normal",
+          marginRight: "10px",
+          padding: "8px 12px"
+        }}
         >
-          Completed
+          Active
         </button>
+
+        {/* completed button--shows only completed todos */}
+        <button
+           onClick={() => setFilter("completed")}
+           style={{fontWeight: filter === "completed"?"bold": "normal",
+            padding: "8px 12px"
+           }}
+           >
+            Completed
+           </button>
     </div>
   );
 }
