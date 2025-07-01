@@ -61,3 +61,8 @@ export default function TodoItem({todo}) {
         </div>
      );
    }
+
+
+  //  more notes on TodoItem: state--tracks whether user is editing the task (isEditing) and the new text (newText)
+  // context--uses toggleTodo, deleteTodo, and editTodo to update tasks----UI--shows a checkbox--the task text 
+  // (or input if editing) and buttons.//
