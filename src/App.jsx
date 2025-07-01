@@ -5,13 +5,14 @@
 
 import './App.css'
 import TodoInput from "./components/TodoInput";
-import TodoList from "./components/TodoList;
+import TodoList from "./components/TodoList";
 import FilterButtons from "./components/FilterButtons";
-import ThemeToggleButton from "./components/ThemeToggle"
+import ThemeToggleButton from "./components/ThemeToggleButton";
 import { useTodoContext } from "./contexts/TodoContext";  
 
 
 export default function App(){
+  // get clearCompleted function from Todo Context//
   const {clearCompleted} = useTodoContext();
 
  return (
