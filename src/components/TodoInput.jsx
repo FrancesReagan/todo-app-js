@@ -1,26 +1,29 @@
+// putting export default at the beginning//
+
+import { useState } from "react";
 import { useTodos } from "../contexts/TodoContext"
 
 
-function TodoInput() {
+export default function TodoInput() {
 
-  const [todoText, setTodoText] = useState("")
-  const {addTodo} = useTodos()
+  const [input, setInput] = useState("")
+  const {addTodo} = useTodoContext();
 
  const handleSubmit = (e) => {
   e.preventDefault()
-   addTodo(todoText)
-   setTodoText("")
- }
+   addTodo(innput)
+   setTodoText("");
+ };
 
   return (
- <form onSubmit= {handleSubmit}>
-    <input value= {todoText} 
-    onChange={(e) => setTodoText(e.target.value)}
-    placeholder="Add todo"
+ <form onSubmit= {handleSubmit} style={{ marginBottom: "20px" }}>
+    <input 
+    value="text" 
+    onChange={(e) => setInput(e.target.value)}
+    placeholder="What needs to be done?"
+    style={{ padding: "8px", width: "70%" }}
     />
-<button type = "submit">Add</button>
+<button type ="submit" style={{ padding: "8px" }}>Add Todo</button>
 </form>
-
-  )
+  );
 }
-export default TodoInput;
