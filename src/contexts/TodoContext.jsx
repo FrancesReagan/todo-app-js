@@ -55,8 +55,23 @@ const editTodo = (id,newText) => {
   );
 };
 
+const clearCompleted = () => {
+  setTodos(todos.filter(todo=> !todo.completed));
+};
 
+const value = {todos,addTodo,toggleTodo,deleteTodo, editTodo, clearCompleted};
 
+return<TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
+
+export function useTodoContext(){
+  const context = useContext(TodoContext);
+  if (!context) {
+    throw new Error("useTodoContext must be used within a TodoProvider");
+  }
+  return context;
+}
+
+// older version start//
 //   const [todos, setTodos] = useState(() => {
 
 //   // addTodo//
