@@ -4,6 +4,7 @@ import { createContext, useState, useContext, useEffect }  from "react";
 
 const TodoContext = createContext(null);
 
+export function TodoProvider({children}) {
 // lazy inital state---this function only runs once when the component first loads or mounts//
 const [todos, setTodos] = useState(() => {   
   // localStorage logic---checks localStorage for saved todos from prev sessions, parses the JSON string back into
@@ -74,7 +75,13 @@ const clearCompleted = () => {
 // value object with all functions and state to share//
 const value = {todos,addTodo,toggleTodo,deleteTodo, editTodo, clearCompleted};
 
-return<TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
+return (
+<TodoContext.Provider value={value}>
+  {children}
+  </TodoContext.Provider>
+);
+}
+
 
 export function useTodoContext(){
   const context = useContext(TodoContext);
