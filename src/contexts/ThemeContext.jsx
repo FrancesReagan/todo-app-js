@@ -1,4 +1,8 @@
-// themecontext---context that manages the light/dark theme//
+// themecontext---this is the control center that switches the app's appearance betweeen 
+// light and dark themes or modes.  ThemeContext stores the curent theme (light or dark) in state.---
+// it provides a function to toggle between themes---saves the themes to localStorage--and changes the webpage's
+// background and text colors.//
+
 import { createContext, useContext, useState, useEffect }  from "react";
 
 const ThemeContext = createContext(null);
@@ -46,3 +50,8 @@ export function useThemeContext() {
 
   return context;
 }
+
+// more info on ThemeContext: state---const[theme, setTheme] holds the current theme--and provides tool to update
+// theme----toggle function--toggleTheme switches the theme.  Saving theme---useEffect saves the theme to localStorage
+// and updates the webpage's look by changing the body class.  Provider---shares the theme and toggleTheme with the
+// other components in the app//
