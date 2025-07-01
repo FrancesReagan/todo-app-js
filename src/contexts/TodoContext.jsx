@@ -4,7 +4,12 @@ import { createContext, useState, useContext, useEffect }  from "react";
 
 const TodoContext = createContext(null);
 
+// lazy inital state---this function only runs once when the component first loads or mounts//
 const [todos, setTodos] = useState(() => {   
+  // localStorage logic---checks localStorage for saved todos from prev sessions, parses the JSON string back into
+  // a javascript array, returns the saved todos if they exist and returns an empty array [] if no todos are saved
+  // or if something goes wrong.----i.e. when the app first loads, try to get my saved todos from the browser's
+  // memory. if that works, use those. if not, start with an empty list.//
   try {     
     return JSON.parse(localStorage.getItem("todos") || "[]");   
   } catch (error) {     
