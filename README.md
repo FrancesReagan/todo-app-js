@@ -59,7 +59,18 @@ _To Use_
 
 _To install_
  -Clone or download project
-  -git clone <
+  -git clone <https://github.com/FrancesReagan/todo-app-js>
+  -cd todo-app-js
+
+ -Install dependencies
+  -npm install
+
+ -Start development server
+  -npm run dev
+
+-Open browser
+ -Navigate to http://localhost:5173
+ -start adding todos
 
 
 
