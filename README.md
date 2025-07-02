@@ -60,6 +60,7 @@ _To Use_
 _To install_
  -Clone or download project
   -git clone <https://github.com/FrancesReagan/todo-app-js>
+  
   -cd todo-app-js
 
  -Install dependencies
@@ -71,6 +72,27 @@ _To install_
 -Open browser
  -Navigate to http://localhost:5173
  -start adding todos
+
+ -----------------------------------------
+ _How to Use_
+  -Add a todo- type in the input field and click `add todo` or press `enter`
+  
+  -mark as complete - click the checkbox next to any todo
+  
+  -edit a todo - click the `edit` button, modify the text, then click `save`
+
+  -delete a todo - click `delete` button
+  
+  -filter todos - use the `all`, `active`, or `completed` buttons
+  
+  -switch themes - click the theme toggle button to switch between light and dark theme modes.
+  
+  -clear completed - click `clear completed` to remove all finished tasks.
+
+  -----------------------------------------------------
+  
+
+  
 
 
 
