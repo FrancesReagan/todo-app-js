@@ -1,12 +1,69 @@
-# React + Vite
+__TODO APP with  React Context API__
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<img width="453" alt="image" src="https://github.com/user-attachments/assets/49067bea-0577-4229-bff8-116973b42a89" />
+___Light Theme___
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+----------------------------------------
 
-## Expanding the ESLint configuration
+<img width="513" alt="image" src="https://github.com/user-attachments/assets/b721e9c3-92fb-4fec-be98-99d0beef39a5" />
+___Dark Theme___
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+<img width="540" alt="image" src="https://github.com/user-attachments/assets/caa6a95c-dfcd-4e23-9ee9-fc2efd951c16" />
+___Completed Tasks shown Filtered___
+
+------------------------------
+
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/532f79d5-61a6-4d7f-a0bd-46210bb9d05a" />
+___Active Task shown filtered___
+
+-------------------
+___Simple and modern TODO APP built with React --- made to show React's Context API/State management.___
+   -Features: 
+   
+    -Add new todos, Edit existing todos, Toggle completion, Delete todos, Filter todos, dark/light theme, and data persistance (theme and todos saved to localStorage).
+    
+   -Tech:
+   
+    -React--frontend library (framework some say:)), React Context API--state management, JavaScript (ES6+)--Programming language, Vite-build tool and development server,
+     and localStorage for data persistance.
+-----------------------------------------------------
+__Project Structure__
+<img width="138" alt="image" src="https://github.com/user-attachments/assets/a4091bc8-bf80-49fe-a795-bc2d4c632da4" />
+
+-----------------------------------------------------
+_Architecture_
+-This app uses React Context API--with 3 main contexts:
+
+ -TodoContext: manages the todo list and all Create/Read/Update/Delete operations.
+ 
+ -FilterContext: controls which todos are displayed.
+ 
+ -ThemeContext: handles light/dark mode theme switching.
+ 
+_Note_
+ -Each context provides its own custom hook for ease of use:
+ 
+  -useTodoContext()
+  
+  -useFilterContext()
+  
+  -useThemeContext()
+  
+------------------------------------------------------------------------
+
+_To Use_
+ -Node.js (v14 or higher)
+ -npm
+
+_To install_
+ -Clone or download project
+  -git clone <
+
+
+
+
+
+
+
