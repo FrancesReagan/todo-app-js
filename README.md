@@ -90,13 +90,82 @@ _To install_
   -clear completed - click `clear completed` to remove all finished tasks.
 
   -----------------------------------------------------
-  
+  _Learning Concepts in this Todo App Context API project_
+   -React Context API for state management without "prop drilling"
+   -custom hooks for accessing context data.
+   -localStorage- for data persistence of tasks and theme preferences.
+   -useEffect - for side effects (saving to localStorage).
+   -useState - with "lazy initialization"
+   -component composition and resuability
+   -error handling with try-catch blocks
 
-  
+   ------------------------------------------------------
+_References and Learning Resources_
+
+•	React Documentation - https://react.dev/ 
+o	Context API Guide: https://react.dev/learn/passing-data-deeply-with-context
+o	useState Hook: https://react.dev/reference/react/useState
+o	useEffect Hook: https://react.dev/reference/react/useEffect
+o	useContext Hook: https://react.dev/reference/react/useContext
+•	Vite Documentation - https://vitejs.dev/ 
+o	Getting Started: https://vitejs.dev/guide/
+o	React Plugin: https://github.com/vitejs/vite-plugin-react
+
+_Educational Platforms_
+
+•	Module 10: React Project Development 
+o	Context API fundamentals
+o	State management patterns
+o	Component composition
+o	Custom hooks implementation
+
+_Online Learning Resources_
+•	React.dev Learn Section - https://react.dev/learn 
+o	"Managing State" chapter
+o	"Escape Hatches" for useEffect patterns
+•	MDN Web Docs - https://developer.mozilla.org/ 
+o	localStorage API: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+o	JSON methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+
+_Technical References_
+
+•	React Patterns - https://reactpatterns.com/ 
+
+_Code Examples and Inspiration_
+
+•	React Examples Repository - Context API examples
+•	Todo App Tutorials - Various implementations for comparison
+•	React DevTools - For debugging and state inspection
 
 
+_Browser APIs_
+•	Web Storage API - https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API 
+o	localStorage implementation
+o	Error handling strategies
+•	Crypto.randomUUID() - https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID 
+o	Modern UUID generation
 
+_Community Resources_
+Forums and Q&A
+•	Stack Overflow - https://stackoverflow.com/ 
+o	React Context API questions
+o	localStorage troubleshooting
+o	Vite configuration issues
 
+_Debugging and Development Tools_
+VS Code Extensions
+•	ES7+ React/Redux/React-Native snippets
+•	Prettier - Code formatting
+•	ESLint - Code linting and error detection
 
-
-
+_Acknowledgments_
+Course Materials
+•	RTT-23 Bootcamp - Module 10 React Project Development
+•	Instructor guidance (A.Tavarez an C.Wright) - Context API implementation strategies
+•	Peer collaboration - Code review and problem-solving
+Open Source Community
+•	React Team - For creating and maintaining React
+•	Vite Team - For the excellent build tool
+•	MDN Contributors - For comprehensive web documentation
+•	Stack Overflow Community - For troubleshooting support
+________________________________________
